@@ -6,21 +6,20 @@ import java.util.Map;
 
 public class MainProgram {
 
+    public static final Map<Integer, DataModel> dataModel = new HashMap<>();
+    public static String basePath= "local_storage/";
+
     public static void main(String[] args) {
-        DataModel dataModel1 = new DataModel();
-        dataModel1.setId(2);
-        dataModel1.setFirstName("test1");
-        dataModel1.setLastName("testL1");
 
-        DataModel dataModel2 = new DataModel();
-        dataModel2.setFirstName("test2");
-        dataModel2.setLastName("testL2");
-
-        Map<Integer, DataModel> dataModelMap = new HashMap<>();
-        dataModelMap.put(1, dataModel1);
-        dataModelMap.put(2, dataModel2);
-
+        initData();
         ExcelTools excelTools = new ExcelTools();
-        excelTools.writeToExcel(dataModelMap);
+        excelTools.writeToExcel(dataModel, basePath);
+    }
+
+    public static void initData() {
+        dataModel.put(1, new DataModel(1,"Java", "Java Language..."));
+        dataModel.put(2, new DataModel(2, "C#", "C# Language..."));
+        dataModel.put(3, new DataModel(3, "Python", "Python Language..."));
+        dataModel.put(4, new DataModel(4, "C", "C Language..."));
     }
 }

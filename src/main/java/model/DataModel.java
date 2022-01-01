@@ -3,8 +3,16 @@ package model;
 public class DataModel {
 
     private int id;
-    private String firstName;
-    private String lastName;
+    private String title;
+    private String description;
+
+    public DataModel() {}
+
+    public DataModel(int id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -14,19 +22,19 @@ public class DataModel {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getDescription() {
+        return description;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
